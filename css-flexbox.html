@@ -4,6 +4,7 @@
   }
   header {
     display: flex;
+    flex-direction: row;
   }
   header .profile-thumbnail {
     width: 50px;
@@ -12,10 +13,13 @@
   }
   header .profile-name {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: 10px;
   }
   header .follow-btn {
     display: flex;
+    align-items: center;
     margin: 0 0 0 auto;
   }
   header .follow-btn button {
@@ -38,6 +42,7 @@
   }
   footer {
     display: flex;
+    flex-direction: row;
   }
   footer .stats {
     display: flex;
