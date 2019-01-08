@@ -3,16 +3,30 @@
   .d2{background:LightSalmon;}
   .d3{background:PaleTurquoise;}
   .d4{background:LightPink;}
-  .d5{background:PaleGreen;}
-
+  .d5{
+    background:PaleGreen;
+    grid=column: 2/4;
+    grid-row: 2/4;
+    /*
+    grid-area: footer;
+    grid-area: 3/1/4/4;
+    */
+  }
   .container {
     font-size: 40px;
     width: 100%;
     background: LightGray;
     display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 50px 50px;
-
+    grid-template-columns: 1fr 1fr 1fr;
+    /*grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    */
+    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    */
+    grid-gap: 10px;
   }
 </style>
 
