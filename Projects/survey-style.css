@@ -1,9 +1,18 @@
-body {
-	font-family: "Trebuchet MS", Helvetica, sans-serif, Century Gothic, Merriweather, serif;
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+html, body {
+	font-family: "Trebuchet MS",'Raleway', Helvetica, sans-serif, Century Gothic, Merriweather, serif;
 	background-color: #FFF;
 	text-align: left;
   font-size: 18px;
   color: #333;
+	min-width: 320px;
+}
+
+header {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 16px;
 }
 
 #main {
@@ -14,13 +23,39 @@ body {
 	border-radius: 10px;
 }
 
-#container {
-	max-width: 900px;
-	margin: auto;
+.labels {
+  display: inline-block;
+  text-align: right;
+  width: 40%;
+  padding: 5px;
+  vertical-align: top;
+  margin-top: 10px;
 }
 
-#title, #subtitle {
-	text-align: center;
+.rightTab {
+  display: inline-block;
+  text-align: left;
+  width: 48%;
+  vertical-align: middle;
+}
+
+#userAge {
+  width: 40px;
+}
+
+.input-field {
+  height: 20px;
+  width: 280px;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+}
+
+.userRatings,
+input[type="checkbox"] {
+  float: left;
+  margin-right: 5px;
 }
 
 ul{
@@ -34,24 +69,35 @@ li{
 	text-align: left;
 }
 
-
-
-
 p {
 	margin-left: 15px;
 }
 
-#tribute-info {
-	max-width: 900px;
-	margin: auto;
+.dropdown {
+  height: 35px;
+  width: 140px;
+  padding: 5px;
+  margin: 10px;
+  margin-top: 15px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
 }
 
-#tribute-info h3 {
-	margin: 20px;
-	text-align: left;
+.radio, .checkbox {
+  position: relative;
+  left: -43px;
+  margin-left: 10px;
+  display: block;
+  padding-bottom: 10px;
 }
 
-#tribute-link {
-	display: block;
-	margin-bottom:20px;
+#submit {
+  background-color: #59ace0;
+  border-radius: 4px;
+  color: black;
+  font-size: 1em;
+  height: 40px;
+  width: 96px;
+  margin: 10px;
+  border: 0px solid;
 }
