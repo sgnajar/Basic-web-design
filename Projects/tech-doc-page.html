@@ -1,0 +1,239 @@
+<style>
+ @import url("tech-doc-page-style.css");
+</style>
+
+<nav id="navbar">
+  <header>R Documentation</header>
+  <ul>
+    <a class="nav-link" href="#Introduction_to_R" rel="internal"><li>Introduction to R</li></a>
+    <a class="nav-link" href="#The_R_environment" rel="internal"><li>The R environment</li></a>
+    <a class="nav-link" href="#R" rel="internal"><li>R</li></a>
+    <a class="nav-link" href="#Hello_world" rel="internal"><li>Hello world</li></a>
+    <a class="nav-link" href="#Variables" rel="internal"><li>Variables</li></a>
+    <a class="nav-link" href="#Declaring_variables" rel="internal"><li>Declaring variables</li></a>
+    <a class="nav-link" href="#Variable_scope" rel="internal"><li>Variable scope</li></a>
+    <a class="nav-link" href="#Global_variables" rel="internal"><li>Global variables</li></a>
+    <a class="nav-link" href="#Local_variables" rel="internal"><li>Local variables</li></a>
+    <a class="nav-link" href="#Constants" rel="internal"><li>Constants</li></a>
+    <a class="nav-link" href="#Data_types" rel="internal"><li>Data types</li></a>
+    <a class="nav-link" href="#if...else_statement" rel="internal"><li>if...else statement</li></a>
+    <a class="nav-link" href="#while_statement" rel="internal"><li>while statement</li></a>
+    <a class="nav-link" href="#Function_declarations" rel="internal"><li>Functions</li></a>
+    <a class="nav-link" href="#Reference" rel="internal"><li>References</li></a>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="Introduction_to_R">
+    <header>Introduction to R</header>
+    <article>
+      <p>R is a language and environment for statistical computing and graphics. It is a GNU project which is similar to the S language and environment which was developed at Bell Laboratories (formerly AT&T, now Lucent Technologies) by John Chambers and colleagues. R can be considered as a different implementation of S. There are some important differences, but much code written for S runs unaltered under R.</p>
+      <p>R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, …) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity.</p>
+      </article>
+    </section>
+  <section class="main-section" id="The_R_environment">
+    <header>The R environment</header>
+    <article>
+      <p>R is an integrated suite of software facilities for data manipulation, calculation and graphical display. It includes</p>
+      <li>an effective data handling and storage facility,</li>
+      <li>a suite of operators for calculations on arrays, in particular matrices,</li>
+      <li>a large, coherent, integrated collection of intermediate tools for data analysis,</li>
+      <li>graphical facilities for data analysis and display either on-screen or on hardcopy, and</li>
+      <li>a well-developed, simple and effective programming language which includes conditionals, loops, user-defined recursive functions and input and output facilities.</li>
+      <p>The term “environment” is intended to characterize it as a fully planned and coherent system, rather than an incremental accretion of very specific and inflexible tools, as is frequently the case with other data analysis software.</p>
+      </article>
+    </section>
+  <section class="main-section" id="R">
+    <header>R</header>
+    <article>
+      <p>R is a programming language and software environment for statistical analysis, graphics representation and reporting. R was created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand, and is currently developed by the R Development Core Team.</p>
+      <p>The core of R is an interpreted computer language which allows branching and looping as well as modular programming using functions. R allows integration with the procedures written in the C, C++, .Net, Python or FORTRAN languages for efficiency.</p>
+      <p>R is freely available under the GNU General Public License, and pre-compiled binary versions are provided for various operating systems like Linux, Windows and Mac.</p>
+      <p>R is free software distributed under a GNU-style copy left, and an official part of the GNU project called GNU S.</p>
+
+    </article>
+    </section>
+  <section class="main-section" id="Hello_world">
+    <header>Hello world</header>
+    <article>
+      <code>
+        > myString <- "Hello, World!"
+        > print ( myString)
+        [1] "Hello, World!
+      </code>
+    </article>
+    </section>
+  <section class="main-section" id="Variables">
+    <header>Variables</header>
+    <p>A variable provides us with named storage that our programs can manipulate. A variable in R can store an atomic vector, group of atomic vectors or a combination of many Robjects. A valid variable name consists of letters, numbers and the dot or underline characters. The variable name starts with a letter or the dot not followed by a number.</p>
+    </section>
+  <section class="main-section" id="Declaring_variables">
+    <header>Declaring variables</header>
+    <article>
+      <p>The variables can be assigned values using leftward, rightward and equal to operator. The values of the variables can be printed using print() or cat() function. The cat() function combines multiple items into a continuous print output.</p>
+      <code>
+        # Assignment using equal operator.
+        var.1 = c(0,1,2,3)
+
+        # Assignment using leftward operator.
+        var.2 <- c("learn","R")
+
+        # Assignment using rightward operator.
+        c(TRUE,1) -> var.3
+
+        print(var.1)
+        cat ("var.1 is ", var.1 ,"\n")
+        cat ("var.2 is ", var.2 ,"\n")
+        cat ("var.3 is ", var.3 ,"\n")
+      </code>
+      <p>When we execute the above code, it produces the following result − </p>
+      <code>
+        [1] 0 1 2 3
+        var.1 is  0 1 2 3
+        var.2 is  learn R
+        var.3 is  1 1
+      </code>
+    </article>
+    </section>
+  <section class="main-section" id="Variable_scope">
+    <header>Variable scope</header>
+    <article>
+      Let us consider the following example.
+      <code>
+        outer_func <- function(){
+        b <- 20
+        inner_func <- function(){
+        c <- 30
+        }
+        }
+        a <- 10
+      </code>
+    </article>
+    </section>
+  <section class="main-section" id="Global_variables">
+    <header>Global variables</header>
+    <article>
+      Global variables are those variables which exists throughout the execution of a program. It can be changed and accessed from any part of the program.
+      However, global variables also depend upon the perspective of a function.
+      For example, in the above example, from the perspective of inner_func(), both a and b are global variables.
+      However, from the perspective of outer_func(), b is a local variable and only a is global variable. The variable c is completely invisible to outer_func().
+    </article>
+    </section>
+    <section class="main-section" id="Local_variables">
+      <header>Local variables</header>
+      <article>
+        On the other hand, Local variables are those variables which exist only within a certain part of a program like a function, and is released when the function call ends.
+        In the above program the variable c is called a local variable.
+        If we assign a value to a variable with the function inner_func(), the change will only be local and cannot be accessed outside the function.
+        This is also the same even if names of both global variable and local variables matches.
+        For example, if we have a function as below.
+        <code>
+        outer_func <- function(){
+        a <- 20
+        inner_func <- function(){
+        a <- 30
+        print(a)
+        }
+        inner_func()
+        print(a)
+        }
+        </code>
+        When we call it,
+        <code>
+        > a <- 10
+        > outer_func()
+        [1] 30
+        [1] 20
+        > print(a)
+        [1] 10
+        </code>
+          <p>We see that the variable a is created locally within the environment frame of both the functions and is different to that of the global environment frame.</p>
+
+      </article>
+      </section>
+  <section class="main-section" id="Data_types">
+    <header>Data types</header>
+    <article>
+      <p>In R, a variable itself is not declared of any data type, rather it gets the data type of the R - object assigned to it. So R is called a dynamically typed language, which means that we can change a variable’s data type of the same variable again and again when using it in a program.</p>
+      <code>
+        var_x <- "Hello"
+        cat("The class of var_x is ",class(var_x),"\n")
+
+        var_x <- 34.5
+        cat("  Now the class of var_x is ",class(var_x),"\n")
+
+        var_x <- 27L
+        cat("   Next the class of var_x becomes ",class(var_x),"\n")
+      </code>
+    </article>
+    </section>
+  <section class="main-section" id="if...else_statement">
+    <header>if...else statement</header>
+    <article>
+      Use the if statement to execute a statement if a logical condition is true. Use the optional else clause to execute a statement if the condition is false. An if statement looks as follows:
+      <code>if (condition) {
+        statement_1;
+      } else {
+        statement_2;
+      }</code>
+      condition can be any expression that evaluates to true or false. See Boolean for an explanation of what evaluates to true and false. If condition evaluates to true, statement_1 is executed; otherwise, statement_2 is executed. statement_1 and statement_2 can be any statement, including further nested if statements.
+      <p>
+      You may also compound the statements using else if to have multiple conditions tested in sequence, as follows:
+            </p>
+      <code>if (condition_1) {
+        statement_1;
+      } else if (condition_2) {
+        statement_2;
+      } else if (condition_n) {
+        statement_n;
+      } else {
+        statement_last;
+      } </code>
+      In the case of multiple conditions only the first logical condition which evaluates to true will be executed. To execute multiple statements, group them within a block statement ({ ... }) . In general, it's good practice to always use block statements, especially when nesting if statements:
+
+      <code>if (condition) {
+        statement_1_runs_if_condition_is_true;
+        statement_2_runs_if_condition_is_true;
+      } else {
+        statement_3_runs_if_condition_is_false;
+        statement_4_runs_if_condition_is_false;
+      }</code>
+      It is advisable to not use simple assignments in a conditional expression, because the assignment can be confused with equality when glancing over the code. For example, do not use the following code:
+      <code>if (x = y) {
+        /* statements here */
+      }</code>
+      If you need to use an assignment in a conditional expression, a common practice is to put additional parentheses around the assignment. For example:
+
+      <code>if ((x = y)) {
+        /* statements here */
+      }</code>
+    </article>
+    </section>
+  <section class="main-section" id="while_statement">
+    <header>while statement</header>
+    <article>
+      <p>The While loop executes the same code again and again until a stop condition is met.</p>
+      <p>The basic syntax for creating a while loop in R is −</p>
+      <code>
+        while (test_expression) {
+           statement
+        }
+      </code>
+      <p>Here key point of the while loop is that the loop might not ever run. When the condition is tested and the result is false, the loop body will be skipped and the first statement after the while loop will be executed.</p>
+    </article>
+    </section>
+  <section class="main-section" id="Functions">
+    <header>Functions</header>
+    <article>
+      <p>A function is a set of statements organized together to perform a specific task. R has a large number of in-built functions and the user can create their own functions.</p>
+      <p>In R, a function is an object so the R interpreter is able to pass control to the function, along with arguments that may be necessary for the function to accomplish the actions.</p>
+      <p>The function in turn performs its task and returns control to the interpreter as well as any result which may be stored in other objects.</p>
+
+    </article>
+    </section>
+  <section class="main-section" id="References">
+    <header>References</header>
+    <article>
+      <li>All the documentation in this page is taken from <a href="https://www.r-project.org/about.html" target="_blank">r-project</a> and <a href="https://www.tutorialspoint.com/r/index.htm" target="_blank">tutorialspoint</a>
+    </article>
+    </section>
+</main>
